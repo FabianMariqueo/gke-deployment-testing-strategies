@@ -254,7 +254,7 @@ kubectl apply -f ab/destinationrule.yaml -f ab/virtualservice-split.yaml
 ```
 Send request with end-user as "dummyUser":
 ```
-curl -H "end-user:dummyUser" "http://$(kubectl get service istio-ingressgateway -n istio-system -o jsonpath="{.status.loadBalancer.ingress[0].ip}")/version"
+curl -H 'Cookie:user=test' "http://$(kubectl get service istio-ingressgateway -n istio-system -o jsonpath="{.status.loadBalancer.ingress[0].ip}")/version"
 ```
 Cleanup:
 ```
