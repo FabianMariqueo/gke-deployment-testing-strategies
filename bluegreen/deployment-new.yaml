@@ -27,7 +27,7 @@ spec:
     spec:
       containers:
         - name: app
-          image: gcr.io/cloud-solutions-images/app:new
+          image: fabiancaca/app:new
           livenessProbe:
              httpGet:
                 path: /version
